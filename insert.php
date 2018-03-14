@@ -1,30 +1,50 @@
 <?php
 mb_internal_encoding("utf8");
-
-$pdo =new PDO("mysql:dbname=lesson01;host=localhost;","root","mysql");
+$pdo = new PDO("mysql:dbname=lesson01;host=localhost;" ,"root" ,"mysql");
 
 $pdo->exec("insert into contactform(name,mail,age,comments)
 values('".$_POST['name']."','".$_POST['mail']."','".$_POST['age']."','".$_POST['comments']."');");
+
 ?>
 
-
-<!doctype HTML>
+<?doctype HTML>
 <html lang="ja">
 
 <head>
 <meta charset="utf-8">
-　<title>お問合せフォームを作る</title>
-<link rel="=stylesheet" type="text/css" href="style2.css">
+ <title>お問い合わせフォームを作る</title>
+<link rel="stylesheet"type="text/css" herf="style2.css">
 </head>
-<body>
 
+<body>
   <h1>お問合せフォーム</h1>
-    
+  
+  
+  <?php
+echo 'テスト'
+?>
+<?php echo $_POST['name']; ?>
+</p>
+
+<p>メールアドレス
+<br>
+<?php echo $_POST['mail']; ?>
+</p>
+
+<p>年齢
+<br>
+<?php echo $_POST['age']; ?>
+</p>
+
+<p>コメント
+<br>
+<?php echo $_POST['comments']; ?>
+</p>
+  
+  
   <div class="confirm">
-    <p>お問合せ有難うございました。<br>3営業日以内に担当よりご連絡差し上げます。
-    </p>  
-    </div>
-    
-    
-</body>
-</html>
+  <p>お問い合わせ有難うございました。<br>3営業日以内に担当者よりご連絡差し上げます。
+  </p>
+  
+  </body>
+  </html>
